@@ -10,13 +10,14 @@ class ItemService(
     private val ocrService: OcrService,
 )
 {
-    fun progress() {
-        val dataList = mutableListOf<Item>()
-        dataList.add(crawlerService.getItemInfo("하급 오레하 융화 재료"))
-        dataList.addAll(ocrService.getMarketListByOcr("1"))
-        dataList.addAll(ocrService.getMarketListByOcr("2"))
-        dataList.addAll(ocrService.getMarketListByOcr("3"))
-        dataList.addAll(ocrService.getMarketListByOcr("4"))
-        println(dataList)
+    fun prepare() : List<Item> {
+        val itemList = mutableListOf<Item>()
+        itemList.add(crawlerService.getItemInfo("하급 오레하 융화 재료"))
+        itemList.addAll(ocrService.getMarketListByOcr("1"))
+        itemList.addAll(ocrService.getMarketListByOcr("2"))
+        itemList.addAll(ocrService.getMarketListByOcr("3"))
+        itemList.addAll(ocrService.getMarketListByOcr("4"))
+        println(itemList)
+        return itemList
     }
 }

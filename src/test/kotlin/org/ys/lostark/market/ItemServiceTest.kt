@@ -14,6 +14,6 @@ internal class ItemServiceTest {
 
     @Test
     fun progress() {
-        itemService.progress()
+        itemService.prepare()
     }
 }

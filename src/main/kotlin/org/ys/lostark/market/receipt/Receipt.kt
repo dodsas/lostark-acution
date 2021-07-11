@@ -4,7 +4,8 @@ import java.lang.StringBuilder
 
 class Receipt (
     val inputs : List<ReceiptItem>,
-    val output : ReceiptItem
+    val output : ReceiptItem,
+    val baseCost : Double
 ) {
 
     override fun toString(): String {
@@ -15,7 +16,7 @@ class Receipt (
         }
         stringBuilder.append("output -----------------\n")
         stringBuilder.append(String.format("%-5d %s\n", output.count, output.itemName))
-        stringBuilder.append("------------------------\n")
+        stringBuilder.append("------------------------")
         return stringBuilder.toString()
     }
 }

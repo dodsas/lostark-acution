@@ -21,6 +21,7 @@ class ReceiptService {
 
     private fun getReceipt() : Receipt  {
         val inputs = mutableListOf<ReceiptItem>()
+        var output = ReceiptItem("dummy", 1)
 
         while(iterator.hasNext()) {
             val line = iterator.next()
@@ -28,11 +29,11 @@ class ReceiptService {
                 continue
             }
             val split = line.split(",")
-            val receiptItem = ReceiptItem(split[1], split[2].toInt())
             when(split[0]){
-                "i" -> inputs.add(receiptItem)
-                "o" -> {
-                    val receipt = Receipt(inputs, receiptItem)
+                "i" -> inputs.add(ReceiptItem(split[1], split[2].toInt()))
+                "o" -> output = ReceiptItem(split[1], split[2].toInt())
+                "c" -> {
+                    val receipt = Receipt(inputs, output, split[1].toDouble())
                     println(receipt)
                     return receipt
                 }
