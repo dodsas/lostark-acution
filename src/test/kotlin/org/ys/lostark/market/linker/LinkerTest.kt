@@ -1,4 +1,4 @@
-package org.ys.lostark.market.calculator
+package org.ys.lostark.market.linker
 
 import org.junit.jupiter.api.Test
 
@@ -10,7 +10,7 @@ import org.ys.lostark.market.receipt.Receipt
 import org.ys.lostark.market.receipt.ReceiptService
 
 @SpringBootTest
-internal class CalculatorTest {
+internal class LinkerTest {
 
     @Autowired
     lateinit var receiptService: ReceiptService
@@ -23,9 +23,7 @@ internal class CalculatorTest {
         val receipts = receiptService.prepare()
         val items = itemService.prepare()
 
-        val calculator = Calculator()
-        for(receipt: Receipt in receipts){
-            calculator.calculate(receipt, items)
-        }
+        val linker = Linker()
+        linker.link(receipts, items)
     }
 }

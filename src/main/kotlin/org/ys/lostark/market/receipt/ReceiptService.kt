@@ -34,7 +34,7 @@ class ReceiptService {
                 "o" -> output = ReceiptItem(split[1], split[2].toInt())
                 "c" -> {
                     val receipt = Receipt(inputs, output, split[1].toDouble())
-                    println(receipt)
+                    receipt.print()
                     return receipt
                 }
             }
