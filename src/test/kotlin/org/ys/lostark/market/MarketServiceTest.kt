@@ -13,9 +13,7 @@ internal class MarketServiceTest {
     lateinit var marketService: MarketService
 
     @Test
-    fun getItemInfo() {
-        marketService.getItemInfo("오레하 두툼한 생고기")
-        marketService.getItemInfo("질긴 가죽")
-        marketService.getItemInfo("두툼한 생고기")
+    fun progress() {
+        marketService.progress()
     }
 }

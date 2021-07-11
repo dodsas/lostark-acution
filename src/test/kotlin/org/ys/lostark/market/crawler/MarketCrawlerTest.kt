@@ -17,7 +17,7 @@ internal class MarketCrawlerTest{
     private lateinit var marketHtmlParser: MarketHtmlParser
 
     @Test
-    fun test1() {
+    fun parse() {
         val value = marketCrawler.getItemValue("하급 오레하 융화 재료")
         println(value)
         marketHtmlParser.parse("하급 오레하 융화 재료", value)

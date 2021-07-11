@@ -1,5 +1,6 @@
 package org.ys.lostark.config
 
+import nu.pattern.OpenCV
 import org.modelmapper.ModelMapper
 import org.modelmapper.convention.MatchingStrategies
 import org.springframework.boot.web.client.RestTemplateBuilder

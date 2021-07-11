@@ -10,7 +10,7 @@ import java.lang.RuntimeException
 @Service
 class MarketHtmlParser(
 ) {
-    fun parse(itemName:String, htmlString:String) {
+    fun parse(itemName:String, htmlString:String) : Market {
         val doc: Document = Jsoup.parse(htmlString)
         val tags = doc.getElementsByAttribute("data-grade")
         if(tags.size != 4){
@@ -18,10 +18,11 @@ class MarketHtmlParser(
         }
         val market = Market(
             itemName,
-            tags[1].text().toDouble(),
+            1,
             tags[2].text().toDouble(),
             tags[3].text().toDouble(),
         )
         println(market)
+        return market
     }
 }

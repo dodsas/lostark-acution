@@ -42,8 +42,8 @@ dependencies {
     // HTML parser
     implementation("org.jsoup:jsoup:1.14.1")
 
-    // OCR
     implementation("net.sourceforge.tess4j:tess4j:4.5.4")
+    implementation("org.openpnp:opencv:4.5.1-2")
 }
 
 tasks.withType<Test> {
