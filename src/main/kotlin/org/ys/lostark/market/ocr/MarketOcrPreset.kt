@@ -8,8 +8,9 @@ import java.io.FileReader
 
 class MarketOcrPreset {
 
-    val bufferedReader: BufferedReader
-    val iterator: Iterator<String>
+    private val bufferedReader: BufferedReader
+    private val iterator: Iterator<String>
+
     init {
         val file: File = ResourceUtils.getFile("classpath:preset/marketItemList.txt")
         bufferedReader = BufferedReader(FileReader(file))
