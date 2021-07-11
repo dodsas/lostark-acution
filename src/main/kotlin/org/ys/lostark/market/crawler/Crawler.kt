@@ -6,7 +6,7 @@ import org.springframework.web.util.UriComponentsBuilder
 
 
 @Service
-class MarketCrawler(
+class Crawler(
     private val restTemplate: RestTemplate
 ) {
     fun getItemValue(itemName: String): String {

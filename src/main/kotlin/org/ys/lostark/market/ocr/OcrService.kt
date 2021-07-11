@@ -9,16 +9,13 @@ import org.opencv.core.Scalar
 import org.opencv.imgcodecs.Imgcodecs
 import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Service
-import org.springframework.util.ResourceUtils
 import org.ys.lostark.market.Market
-import java.io.BufferedReader
 import java.io.File
-import java.io.FileReader
 import kotlin.streams.toList
 
 
 @Service
-class MarketOcrService {
+class OcrService {
 
     companion object {
         val tesseract: Tesseract = Tesseract()
@@ -36,7 +33,7 @@ class MarketOcrService {
             OpenCV.loadLocally()
 
             // Market Preset
-            val marketOcrPreset = MarketOcrPreset()
+            val marketOcrPreset = OcrPreset()
             marketOcrPresetMap[1] = marketOcrPreset.getPreset()
             marketOcrPresetMap[2] = marketOcrPreset.getPreset()
             marketOcrPresetMap[3] = marketOcrPreset.getPreset()

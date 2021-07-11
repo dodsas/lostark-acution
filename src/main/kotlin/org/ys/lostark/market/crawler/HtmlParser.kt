@@ -8,7 +8,7 @@ import java.lang.RuntimeException
 
 
 @Service
-class MarketHtmlParser(
+class HtmlParser(
 ) {
     fun parse(itemName:String, htmlString:String) : Market {
         val doc: Document = Jsoup.parse(htmlString)

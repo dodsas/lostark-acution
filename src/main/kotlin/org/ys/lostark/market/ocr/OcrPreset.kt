@@ -6,7 +6,7 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 
-class MarketOcrPreset {
+class OcrPreset {
 
     private val bufferedReader: BufferedReader
     private val iterator: Iterator<String>

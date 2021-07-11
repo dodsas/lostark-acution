@@ -2,11 +2,11 @@ package org.ys.lostark.market.ocr
 
 import org.junit.jupiter.api.Test
 
-internal class MarketOcrServiceTest {
+internal class OcrServiceTest {
 
     @Test
     fun grep() {
-        val marketOcr = MarketOcrService()
+        val marketOcr = OcrService()
         marketOcr.getMarketListByOcr("1")
         marketOcr.getMarketListByOcr("2")
     }
