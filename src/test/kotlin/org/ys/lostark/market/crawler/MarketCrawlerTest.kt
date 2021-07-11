@@ -1,9 +1,11 @@
-package org.ys.lostark.market
+package org.ys.lostark.market.crawler
 
 import org.junit.jupiter.api.Test
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.ys.lostark.market.crawler.MarketCrawler
+import org.ys.lostark.market.crawler.MarketHtmlParser
 
 @SpringBootTest
 internal class MarketCrawlerTest{

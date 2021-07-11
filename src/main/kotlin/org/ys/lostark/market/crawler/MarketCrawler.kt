@@ -1,4 +1,4 @@
-package org.ys.lostark.market
+package org.ys.lostark.market.crawler
 
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate

@@ -1,8 +1,9 @@
-package org.ys.lostark.market
+package org.ys.lostark.market.crawler
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.springframework.stereotype.Service
+import org.ys.lostark.market.Market
 import java.lang.RuntimeException
 
 
