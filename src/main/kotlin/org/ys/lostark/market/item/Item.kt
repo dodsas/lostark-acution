@@ -1,11 +1,6 @@
-package org.ys.lostark.market
+package org.ys.lostark.market.item
 
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.springframework.stereotype.Service
-import java.lang.RuntimeException
-
-class Market(
+class Item(
     private val name: String,
     private val count: Int = 1,
     private var lastPrice: Double = 0.0,
@@ -23,7 +18,7 @@ class Market(
         this.price = price
     }
 
-    fun clone(): Market {
-        return Market(name, count, lastPrice, price)
+    fun clone(): Item {
+        return Item(name, count, lastPrice, price)
     }
 }

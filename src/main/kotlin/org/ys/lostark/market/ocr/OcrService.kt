@@ -9,7 +9,7 @@ import org.opencv.core.Scalar
 import org.opencv.imgcodecs.Imgcodecs
 import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Service
-import org.ys.lostark.market.Market
+import org.ys.lostark.market.item.Item
 import java.io.File
 import kotlin.streams.toList
 
@@ -19,7 +19,7 @@ class OcrService {
 
     companion object {
         val tesseract: Tesseract = Tesseract()
-        val marketOcrPresetMap: MutableMap<Int, List<Market>> = mutableMapOf()
+        val ITEM_OCR_PRESET_MAP: MutableMap<Int, List<Item>> = mutableMapOf()
         init {
             // Tess4j
             val resource = ClassPathResource("tessdata")
@@ -34,14 +34,14 @@ class OcrService {
 
             // Market Preset
             val marketOcrPreset = OcrPreset()
-            marketOcrPresetMap[1] = marketOcrPreset.getPreset()
-            marketOcrPresetMap[2] = marketOcrPreset.getPreset()
-            marketOcrPresetMap[3] = marketOcrPreset.getPreset()
-            marketOcrPresetMap[4] = marketOcrPreset.getPreset()
+            ITEM_OCR_PRESET_MAP[1] = marketOcrPreset.getPreset()
+            ITEM_OCR_PRESET_MAP[2] = marketOcrPreset.getPreset()
+            ITEM_OCR_PRESET_MAP[3] = marketOcrPreset.getPreset()
+            ITEM_OCR_PRESET_MAP[4] = marketOcrPreset.getPreset()
         }
     }
 
-    fun getMarketListByOcr(imageName: String) : List<Market> {
+    fun getMarketListByOcr(imageName: String) : List<Item> {
         val outputPath = binarization(imageName)
         val file = File(outputPath)
 
@@ -49,13 +49,13 @@ class OcrService {
         results = results.stream().filter { c -> c != "" }.toList().toMutableList()
         println(results)
 
-        val marketOcrPreset = marketOcrPresetMap[imageName.toInt()]!!
+        val marketOcrPreset = ITEM_OCR_PRESET_MAP[imageName.toInt()]!!
 
         if(marketOcrPreset.size > results.size){
             throw RuntimeException("Invalid Market OCR size (preset = ${marketOcrPreset.size}) (ocr = ${results.size})")
         }
 
-        val list = mutableListOf<Market>()
+        val list = mutableListOf<Item>()
         for(i in marketOcrPreset.indices){
             val splitString = results[i].split(" ")
             val market = marketOcrPreset[i].clone()

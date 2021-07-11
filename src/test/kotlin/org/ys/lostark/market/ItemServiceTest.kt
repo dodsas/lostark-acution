@@ -2,18 +2,18 @@ package org.ys.lostark.market
 
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.ys.lostark.market.item.ItemService
 
 @SpringBootTest
-internal class MarketServiceTest {
+internal class ItemServiceTest {
 
     @Autowired
-    lateinit var marketService: MarketService
+    lateinit var itemService: ItemService
 
     @Test
     fun progress() {
-        marketService.progress()
+        itemService.progress()
     }
 }

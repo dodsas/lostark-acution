@@ -1,7 +1,7 @@
 package org.ys.lostark.market.crawler
 
 import org.springframework.stereotype.Service
-import org.ys.lostark.market.Market
+import org.ys.lostark.market.item.Item
 
 @Service
 class CrawlerService(
@@ -9,7 +9,7 @@ class CrawlerService(
     private val htmlParser: HtmlParser,
 )
 {
-    fun getItemInfo(itemName:String): Market {
+    fun getItemInfo(itemName:String): Item {
         val html = crawler.getItemValue(itemName)
         val marketItem = htmlParser.parse(itemName, html)
         return marketItem
