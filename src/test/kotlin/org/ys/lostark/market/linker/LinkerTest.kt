@@ -25,5 +25,7 @@ internal class LinkerTest {
 
         val linker = Linker()
         linker.link(receipts, items)
+
+        receipts.sortedBy { it.revenue }.forEach { it.print() }
     }
 }

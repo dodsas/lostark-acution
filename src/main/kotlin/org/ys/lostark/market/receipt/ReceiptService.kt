@@ -33,9 +33,7 @@ class ReceiptService {
                 "i" -> inputs.add(ReceiptItem(split[1], split[2].toInt()))
                 "o" -> output = ReceiptItem(split[1], split[2].toInt())
                 "c" -> {
-                    val receipt = Receipt(inputs, output, split[1].toDouble())
-                    receipt.print()
-                    return receipt
+                    return Receipt(inputs, output, split[1].toDouble(), split[2].toDouble())
                 }
             }
         }

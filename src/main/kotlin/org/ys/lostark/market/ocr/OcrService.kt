@@ -47,7 +47,9 @@ class OcrService {
 
         var results = tesseract.doOCR(file).split("\n").toMutableList()
         results = results.stream().filter { c -> c != "" }.toList().toMutableList()
-        println(results)
+
+        // OCR 순수 파싱값 로그
+        //println(results)
 
         val marketOcrPreset = ITEM_OCR_PRESET_MAP[imageName.toInt()]!!
 

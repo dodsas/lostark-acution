@@ -13,6 +13,6 @@ internal class CrawlerServiceTest {
 
     @Test
     fun getItemInfo() {
-        service.getItemInfo("하급 오레하 융화 재료")
+        service.getItemInfo("장인의 노릇한 꼬치구이")
     }
 }
