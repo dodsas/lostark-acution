@@ -16,10 +16,10 @@ private fun Elements.getName(): String {
 }
 
 private fun Elements.getLastPrice(): Double {
-    return this[2].text().toDouble()
+    return this[2].text().replace(",", "") .toDouble()
 }
 private fun Elements.getPrice(): Double {
-    return this[3].text().toDouble()
+    return this[3].text().replace(",", "") .toDouble()
 }
 
 class Item(
